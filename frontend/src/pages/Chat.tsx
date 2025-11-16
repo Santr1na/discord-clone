@@ -6,8 +6,8 @@ import { useAuth } from '../contexts/AuthContext';
 import WebRTC from '../components/WebRTC';
 import './Chat.css';
 
-const API_URL = 'http://localhost:3001';
-const SOCKET_URL = 'http://localhost:3001';
+const API_URL = 'http://localhost:3002';
+const SOCKET_URL = 'http://localhost:3002';
 
 interface Message {
   id: number;

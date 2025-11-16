@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001';
+const API_URL = 'http://localhost:3002';
 
 interface User {
   id: number;
@@ -46,12 +46,19 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const register = async (username: string, email: string, password: string) => {
-    const response = await axios.post(`${API_URL}/auth/register`, { username, email, password });
+    const response = await axios.post(
+        `${API_URL}/auth/register`,
+        { username, email, password },
+        { withCredentials: true }
+    );
+
     const { access_token, user: userData } = response.data;
     setToken(access_token);
     setUser(userData);
+
     localStorage.setItem('token', access_token);
     localStorage.setItem('user', JSON.stringify(userData));
+
     axios.defaults.headers.common['Authorization'] = `Bearer ${access_token}`;
   };
 

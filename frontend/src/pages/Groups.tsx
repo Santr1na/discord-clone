@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Groups.css';
 
-const API_URL = 'http://localhost:3001';
+const API_URL = 'http://localhost:3002';
 
 interface Group {
   id: number;

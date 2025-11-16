@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Friends.css';
 
-const API_URL = 'http://localhost:3001';
+const API_URL = 'http://localhost:3002';
 
 interface Friend {
   id: number;

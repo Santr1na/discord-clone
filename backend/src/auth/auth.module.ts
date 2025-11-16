@@ -12,7 +12,7 @@ import { LocalStrategy } from './local.strategy';
     UsersModule,
     PassportModule,
     JwtModule.register({
-      secret: 'your-secret-key-change-in-production',
+      secret: 'BelkinLox',
       signOptions: { expiresIn: '7d' },
     }),
   ],
